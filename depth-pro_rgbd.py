@@ -54,7 +54,7 @@ def generate_depth_map(input_path, output_path):
             max_invdepth_vizu - min_invdepth_vizu
             )
         #color_depth = (inverse_depth_normalized * 255).astype(np.uint8)
-        color_depth = (255 * ((inverse_depth_normalized))**(alpha + (beta - alpha)*(inverse_depth_normalized))).astype(np.uint8)
+        color_depth = (255 * (inverse_depth_normalized)**(alpha + (beta - alpha)*(inverse_depth_normalized))).astype(np.uint8)
         print(depth.min(), depth.max())
         #plt.hist(color_depth)
         #plt.show()
