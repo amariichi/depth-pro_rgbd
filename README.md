@@ -20,7 +20,7 @@ For reference, I consulted the following paper, which I found through a Google s
 
 [Interactive Image Quality Enhancement Support System by Tone Curve Correction Based on Human KANSEI](https://www.jstage.jst.go.jp/article/ieejias/129/6/129_6_593/_pdf)
 
-![fig](https://github.com/user-attachments/assets/0ad92add-7fb7-488f-a646-8658edd117fe)
+![fig](https://github.com/user-attachments/assets/c7bacea3-f927-42e8-97fd-ab1ba66138da)
 
 
 Apple が作成した Depth-Pro をコマンドラインで動かして、RGBD画像を作るスクリプトです。
