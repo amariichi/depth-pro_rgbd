@@ -24,7 +24,7 @@ def generate_depth_map(input_path, output_path):
 
     #ガンマ補正値
     alpha = 0.4
-    beta = 2.2
+    beta = 1.4
 
     #指定した入力フォルダのファイルリストを取得
     files = [f for f in os.listdir(input_path) if os.path.isfile(os.path.join(input_path, f)) 
