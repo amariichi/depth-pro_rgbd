@@ -22,10 +22,6 @@ def generate_depth_map(input_path, output_path):
     model = model.to(device)
     model.eval()
 
-    #ガンマ補正値
-    alpha = 0.4
-    beta = 1.4
-
     #指定した入力フォルダのファイルリストを取得
     files = [f for f in os.listdir(input_path) if os.path.isfile(os.path.join(input_path, f)) 
              and f.lower().endswith(ALLOWED_EXTENSIONS)]
@@ -46,6 +42,10 @@ def generate_depth_map(input_path, output_path):
         # デプスマップの取得
         depth = prediction["depth"].squeeze().cpu().numpy()
         inverse_depth = 1 / depth
+
+        #ガンマ補正値
+        alpha = 0.5 - (depth.max())**(1/4)/100
+        beta = 1.4
 
         # Visualize inverse depth instead of depth, clipped to [0.1m;250m] range for better visualization.
         max_invdepth_vizu = min(inverse_depth.max(), 1 / 0.1)
